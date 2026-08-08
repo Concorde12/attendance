@@ -1,0 +1,41 @@
+/* ULK Attendance System - small custom styles (plain CSS, Tailwind CDN loads its own base) */
+
+/* Status badge pill colours */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 9999px;
+  padding: 0.125rem 0.625rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+}
+.badge-present { background-color: #d1fae5; color: #047857; }
+.badge-absent  { background-color: #fee2e2; color: #b91c1c; }
+.badge-late    { background-color: #fef3c7; color: #b45309; }
+.badge-excused { background-color: #e0f2fe; color: #0369a1; }
+
+.badge-open   { background-color: #d1fae5; color: #047857; }
+.badge-closed { background-color: #e2e8f0; color: #475569; }
+
+/* Toast notifications container */
+#toast-wrap {
+  position: fixed;
+  bottom: 1.25rem;
+  right: 1.25rem;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Clickable table rows */
+tr.clickable { cursor: pointer; }
+
+/* New row fade-in animation */
+@keyframes rowin { from { opacity: 0; transform: translateY(-4px); } to { opacity: 1; transform: none; } }
+.row-in { animation: rowin .15s ease-out; }
+
+/* A subtle top loading bar used by app.js during fetch calls */
+.loading-cover { position: fixed; inset: 0; z-index: 50; background: rgba(15, 23, 42, 0.25); display: none; align-items: center; justify-content: center; }
+.loading-cover.active { display: flex; }
